@@ -1,0 +1,69 @@
+.SocialBox {
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 45px;
+  justify-content: center;
+  width: 45px;
+  transition: 
+    background-color 250ms ease-out,
+    height 250ms,
+    width 250ms;
+}
+
+.SocialBox:hover {
+  height: 50px;
+  width: 45px;
+}
+
+.SocialBox-twitter {
+  background-color: #55acee;
+}
+
+.SocialBox-twitter:hover {
+  background-color: #2d8dd6;
+}
+
+.SocialBox-linkedin {
+  background-color: #007bb5;
+}
+
+.SocialBox-linkedin:hover {
+  background-color: #01608e;
+}
+
+
+.SocialBox-facebook {
+  background-color: #3b5998;
+}
+
+.SocialBox-facebook:hover {
+  background-color: #0f3380;
+}
+
+.SocialBox-pinterest {
+  background-color: #dc143c;
+}
+
+.SocialBox-pinterest:hover {
+  background-color: #ad092a;
+}
+
+/*===========================================
+            BREAKPOINTS
+===========================================*/
+@media only screen and (min-width: 840px) {
+  .SocialBox:first-child {
+    border-top-right-radius: 2px; 
+  }
+
+  .SocialBox:last-child {
+    border-bottom-right-radius: 2px; 
+  }
+  .SocialBox:hover {
+    width: 50px;
+    height: 45px;
+  }
+}
+

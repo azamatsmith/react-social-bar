@@ -1,0 +1,15 @@
+.SocialBar {
+  justify-content: center;
+  display: flex;
+  height: 100%;
+}
+
+/*===========================================
+            BREAKPOINTS
+===========================================*/
+@media only screen and (min-width: 840px) {
+  .SocialBar {
+    position: fixed;
+    flex-direction: column;
+  }
+}

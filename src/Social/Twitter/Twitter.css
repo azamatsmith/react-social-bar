@@ -1,0 +1,8 @@
+.Twitter {
+  fill: #fff;
+  transition: fill 250ms ease-out;
+}
+
+.Twitter:hover {
+  fill: #AAAAAA;
+}
