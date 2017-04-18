@@ -9,6 +9,7 @@
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
     "@kadira/storybook-addon-options": "^1.0.2",
+    "@kadira/storybook-deployer": "^1.2.0",
     "enzyme": "^2.8.2",
     "react-addons-test-utils": "^15.5.1",
     "react-scripts": "0.9.5"
@@ -19,7 +20,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
