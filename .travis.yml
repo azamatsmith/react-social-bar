@@ -14,7 +14,7 @@ cache:
     - npm test -- --coverage
 
   after_success:
-    - bash <(curl -s https://codecov.io/bash) -e TRAVIS_NODE_VERSION
+    - codecov --token=cea8f735-39f1-44ce-8294-d1d043320e2f
 
 sudo: required
 
