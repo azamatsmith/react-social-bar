@@ -3,18 +3,19 @@ node_js:
   - "7"
 
 cache:
-  yarn: true
-  directories:
-    - node_modules
+yarn: true
 
-  before_install:
-    - npm install -g codecov
+directories:
+  - node_modules
 
-  script:
-    - npm test -- --coverage
+before_install:
+  - npm install -g codecov
 
-  after_success:
-    - codecov --token=cea8f735-39f1-44ce-8294-d1d043320e2f
+script:
+  - npm test -- --coverage
 
-sudo: required
+after_success:
+  - codecov --token=cea8f735-39f1-44ce-8294-d1d043320e2f
+  - bash <(curl -s https://codecov.io/bash) -f coverage/coverage.json
+
 
