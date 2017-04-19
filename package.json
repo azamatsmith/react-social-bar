@@ -1,7 +1,8 @@
 {
   "name": "react-social-bar",
-  "version": "0.1.0",
-  "private": true,
+  "description": "A Social Sharing Bar for your React App",
+  "version": "1.0.16",
+  "private": false,
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
@@ -10,12 +11,19 @@
     "@kadira/storybook": "^2.21.0",
     "@kadira/storybook-addon-options": "^1.0.2",
     "@kadira/storybook-deployer": "^1.2.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "enzyme": "^2.8.2",
     "react-addons-test-utils": "^15.5.1",
     "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
+    "babel": "babel src/Social/ --out-dir lib --copy-files",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -32,5 +40,25 @@
       "node_modules/react-addons-test-utils/",
       "node_modules/enzyme/"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azamatsmith/react-social-bar.git"
+  },
+  "keywords": [
+    "react",
+    "social",
+    "facebook",
+    "twitter",
+    "pinerest",
+    "sharing",
+    "linkedin"
+  ],
+  "author": "Matt Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azamatsmith/react-social-bar/issues"
+  },
+  "homepage": "https://github.com/azamatsmith/react-social-bar#readme"
 }
