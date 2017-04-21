@@ -10,7 +10,7 @@ const sampleConfig = {
   handleClick: () => console.log('may want to send this to your analytics code'),
   // hideBelowWidth: 1038,
   mediaUrl: 'https://namesquash.com/images/namesquashapp.png',
-  productName: 'Name Squash',
+  productName: 'NameSquash',
   twitterHandle: 'namesquash'
 };
 

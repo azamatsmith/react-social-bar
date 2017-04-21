@@ -1,26 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import Social from './';
 
 
 describe('<Social />', () => {
+  const handleClick = jest.fn();
 
-  // const defaultWrapper = mount(<Social />);
-
-  // const shallowWrapper = shallow(<Social />);
-
-  // const wrapper = mount(<Social />);
-  const description = 'Domain Naming made simple';
+  const config = {
+    description: 'a description',
+    domain: 'a domain',
+    handleClick,
+    mediaUrl: 'media url string',
+    productName: 'NameSquash',
+    twitterHandle: 'namesquash'
+  };
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <Social
-        domain="https://namesquash.com"
-        description={ description }
-        productName="Name Squash"
-      />, div
+      <Social config={ config } />, div
     );
   });
 
