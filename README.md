@@ -26,6 +26,7 @@ This project was bootstrapped using [create-react-app](https://github.com/facebo
 
 The easiest way to get started is to clone this repo and run `yarn start`
 
+
 ## Adding react-social-bar to your app
 
 Once `react-social-bar` is installed. Import it into your file  
@@ -37,7 +38,9 @@ Once `react-social-bar` is installed. Import it into your file
   );
 ```
 
+
 ## Configuration Options
+
 
 ### Options
 ```
@@ -51,6 +54,7 @@ Once `react-social-bar` is installed. Import it into your file
     twitterHandle: string (optional)
   }
 ```
+
 
 ### Example Options
 ```
