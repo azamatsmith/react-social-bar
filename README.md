@@ -26,5 +26,41 @@ This project was bootstrapped using [create-react-app](https://github.com/facebo
 
 The easiest way to get started is to clone this repo and run `yarn start`
 
-## Configuration
+## Adding react-social-bar to your app
 
+Once `react-social-bar` is installed. Import it into your file  
+`import SocialBar from 'react-social-bar';
+
+```
+  return (
+    <SocialBar config={ configObj } />
+  );
+```
+
+## Configuration Options
+
+### Options
+```
+  const configObj = {
+    description: string (required),
+    domain: string (required),
+    handleClick: function (required),
+    hideBelowWidth: number (optional),
+    mediaUrl: string (optional),
+    productName: string (required),
+    twitterHandle: string (optional)
+  }
+```
+
+### Example Options
+```
+  const configObj = {
+    description: 'NameSquash: An easy way to name your next side project or business',
+    domain: 'https://namesquash.com',
+    handleClick: (social) => console.log('clicked:', social),
+    hideBelowWidth: 1038,
+    mediaUrl: 'https://namesquash.com/images/namesquashapp.png',
+    productName: 'NameSquash',
+    twitterHandle: 'namesquash'
+  }
+```
