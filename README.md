@@ -10,9 +10,21 @@
 
 ***
 
-
-
-
-
 ![react-social-demo](https://cloud.githubusercontent.com/assets/4824919/25258492/077d2eaa-25fd-11e7-8efa-b6329c8342f8.gif)
+
+
+## Install
+Yarn: 
+`yarn insreact-social-ba
+
+Npm: 
+`nppm install react-social-bar`
+
+## Get Started
+
+This project was bootstrapped using [create-react-app](https://github.com/facebookincubator/create-react-app) and [react-storybook](https://github.com/storybooks/storybook/tree/master/packages/react-storybook)
+
+The easiest way to get started is to clone this repo and run `yarn start`
+
+## Configuration
 
