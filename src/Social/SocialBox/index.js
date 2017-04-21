@@ -17,25 +17,9 @@ export default function SocialBox({
   handleClick,
   name
 }) {
-
-  const getClass = () => {
-    switch (name) {
-      case 'linkedin':
-        return 'linkedin';
-      case 'facebook':
-        return 'facebook';
-      case 'pinterest':
-        return 'pinterest';
-      case 'twitter':
-        return 'twitter';
-      default:
-        return '';
-    }
-  }
-
   return (
     <div
-      className={ `SocialBox SocialBox-${ getClass() }` }
+      className={ `SocialBox SocialBox-${ name }` }
       onClick={ handleClick }
     >
       { children }
