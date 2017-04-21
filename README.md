@@ -15,10 +15,10 @@
 
 ## Install
 Yarn: 
-`yarn insreact-social-ba
+`yarn add react-social-bar`
 
 Npm: 
-`nppm install react-social-bar`
+`npm install react-social-bar`
 
 ## Get Started
 
