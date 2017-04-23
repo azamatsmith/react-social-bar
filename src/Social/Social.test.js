@@ -25,7 +25,13 @@ describe('<Social />', () => {
     twitterHandle: 'namesquash'
   };
 
-  const defaultConfig = { ...config, handleClick: null, nideBelowWidth: null };
+  const defaultConfig = {
+    description: 'a description',
+    domain: 'a domain',
+    mediaUrl: 'media url string',
+    productName: 'NameSquash',
+    twitterHandle: 'namesquash'
+  };
 
   const wrapper = mount(<Social config={ config } />);
   const defaultWrapper = mount(<Social config={ defaultConfig } />);
@@ -37,11 +43,18 @@ describe('<Social />', () => {
     );
   });
 
+
   // PROPS
-  it('should have a default propname prop', () => {
-    expect(defaultWrapper.props().handleClick).not.toBeDefined();
-    expect(defaultWrapper.props().hideBelowWidth).not.toBeDefined();
+  it('should update accept props', () => {
+    expect(wrapper.props().config.description).toEqual('a description');
+    expect(wrapper.props().config.domain).toEqual('a domain');
+    expect(wrapper.props().config.handleClick).toEqual(handleClick);
+    expect(wrapper.props().config.hideBelowWidth).toEqual(700);
+    expect(wrapper.props().config.mediaUrl).toEqual('media url string');
+    expect(wrapper.props().config.productName).toEqual('NameSquash');
+    expect(wrapper.props().config.twitterHandle).toEqual('namesquash');
   });
+
 
   // STATE
   it('should update state when the window size is changed', () => {
@@ -53,6 +66,14 @@ describe('<Social />', () => {
 
     // since we are hiding on 700 and lower, social should not render
     expect(wrapper.state().shouldRender).toEqual(false);
+  });
+
+  // COMPONENT
+  it('should be able to unmount', () => {
+    window.resizeTo(1100, 1100);
+    expect(wrapper.state().shouldRender).toEqual(true);
+
+    wrapper.unmount();
   });
 
 });
