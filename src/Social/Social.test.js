@@ -44,6 +44,18 @@ describe('<Social />', () => {
   });
 
 
+  // PROPS
+  it('should update accept props', () => {
+    expect(wrapper.props().config.description).toEqual('a description');
+    expect(wrapper.props().config.domain).toEqual('a domain');
+    expect(wrapper.props().config.handleClick).toEqual(handleClick);
+    expect(wrapper.props().config.hideBelowWidth).toEqual(700);
+    expect(wrapper.props().config.mediaUrl).toEqual('media url string');
+    expect(wrapper.props().config.productName).toEqual('NameSquash');
+    expect(wrapper.props().config.twitterHandle).toEqual('namesquash');
+  });
+
+
   // STATE
   it('should update state when the window size is changed', () => {
     // default width is 1024, should render social bar

@@ -18,13 +18,6 @@ export default class Social extends Component {
     }),
   }
 
-  static defaultProps = {
-    config: {
-      handleClick: (name) => console.log('clicked ', name),
-      hideBelowWidth: null,
-    }
-  }
-
   state = { shouldRender: true }
 
   componentDidMount() {
