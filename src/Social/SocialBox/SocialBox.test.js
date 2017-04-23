@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import SocialBox from './';
 
 
 describe('<SocialBox />', () => {
+  const handleClick = jest.fn();
+
+  const props = {
+    handleClick,
+    name: 'twitter'
+  };
 
   const wrapper = mount(
-    <SocialBox name="twitter">
+    <SocialBox { ...props }>
       <div className="test" />
     </SocialBox>
   );
@@ -15,7 +21,7 @@ describe('<SocialBox />', () => {
   it('should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <SocialBox name="twitter" />, div
+      <SocialBox { ...props } />, div
     );
   });
 
@@ -31,7 +37,10 @@ describe('<SocialBox />', () => {
   });
 
   // COMPONENT
-  //
-  // STATE
+  it('should should call the default updateItem function if one is not passed', () => {
+    const thisBox  = wrapper.find('.SocialBox .SocialBox-twitter');
+    thisBox.simulate('click');
+    expect(handleClick).toHaveBeenCalled();
+  });
 
 });

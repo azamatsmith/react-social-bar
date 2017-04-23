@@ -29,20 +29,20 @@ export default class Social extends Component {
 
   componentDidMount() {
     if (this.props.config.hideBelowWidth) {
-      this.updateWindowDimensions();
-      window.addEventListener('resize', this.updateWindowDimensions);
+      this._updateWindowDimensions();
+      window.addEventListener('resize', this._updateWindowDimensions);
     }
   }
 
   componentWillUnmount() {
     if (this.props.config.hideBelowWidth) {
-      window.removeEventListener('resize', this.updateWindowDimensions);
+      window.removeEventListener('resize', this._updateWindowDimensions);
     }
   }
 
   // PRIVATE
 
-  updateWindowDimensions = () => {
+  _updateWindowDimensions = () => {
     if (this.props.config.hideBelowWidth > window.innerWidth) {
       return this.setState({ shouldRender: false });
     }
