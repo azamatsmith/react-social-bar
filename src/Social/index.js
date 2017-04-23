@@ -20,7 +20,7 @@ export default class Social extends Component {
 
   static defaultProps = {
     config: {
-      handleClick: (name) => { console.log('clicked ', name) },
+      handleClick: (name) => console.log('clicked ', name),
       hideBelowWidth: null,
     }
   }
@@ -59,7 +59,7 @@ export default class Social extends Component {
         <SocialBar
           description={ config.description }
           domain={ config.domain }
-          handleClick={ config.handleClick }
+          handleClick={ config.handleClick || (name => console.log('clicked: ', name)) }
           hideBelowWidth={ config.hideBelowWidth }
           mediaUrl={ config.mediaUrl }
           productName={ config.productName }
