@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LinkedIn from './';
+import Facebook from './';
 
 
-describe('<LinkedIn />', () => {
+describe('<Facebook />', () => {
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <LinkedIn />, div
+      <Facebook />, div
     );
   });
 

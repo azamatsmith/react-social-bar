@@ -75,6 +75,25 @@ describe('<SocialBar />', () => {
   });
 
   // PROPS
-  // TODO: Write props tests
+
+  it('should have a description prop', () => {
+    expect(wrapper.props().description).toEqual('a description');
+  });
+
+  it('should have a domain prop', () => {
+    expect(wrapper.props().domain).toEqual('a domain');
+  });
+
+  it('should have a mediaUrl prop', () => {
+    expect(wrapper.props().mediaUrl).toEqual('media url string');
+  });
+
+  it('should have a productName prop', () => {
+    expect(wrapper.props().productName).toEqual('NameSquash');
+  });
+
+  it('should have a twitterHandle prop', () => {
+    expect(wrapper.props().twitterHandle).toEqual('namesquash');
+  });
 
 });
