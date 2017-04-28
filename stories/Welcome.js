@@ -1,4 +1,15 @@
 import React from 'react';
+import Social from '../src/Social';
+
+const welcomeConfig = {
+  description: 'react-social-bar: A React component that adds social media sharing to your app with ease.' ,
+  domain: 'https://github.com/azamatsmith/react-social-bar',
+  handleClick: () => console.log('may want to send this to your analytics code'),
+  // hideBelowWidth: 1038,
+  mediaUrl: 'https://cloud.githubusercontent.com/assets/4824919/25506903/42d7a728-2b66-11e7-9d9a-4655f704e6b0.png',
+  productName: 'react-social-bar',
+  twitterHandle: 'azamatsmith'
+};
 
 const styles = {
   main: {
@@ -57,33 +68,15 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <div style={styles.main}>
-        <h1>Welcome to STORYBOOK</h1>
+        <h1>Welcome to react-social-bar</h1>
         <p>
-          This is a UI component dev environment for your app.
+          This bar right down there, that is react-social-bar in action. <br />
+          Give it a try, share react-social-bar. <br />
+          The examples will teach you how to use it in your own implementation. Enjoy!<br />
+
+          - Matt
         </p>
-        <p>
-          We've added some basic stories inside the <code style={styles.code}>src/stories</code> directory.
-          <br/>
-          A story is a single state of one or more UI components. You can have as many stories as you want.
-          <br/>
-          (Basically a story is like a visual test case.)
-        </p>
-        <p>
-          See these sample <a style={styles.link} href='#' onClick={this.showApp.bind(this)}>stories</a> for a component called <code style={styles.code}>Button</code>.
-        </p>
-        <p>
-          Just like that, you can add your own components as stories.
-          <br />
-          Here's how to add your <code style={styles.code}>App</code> component as a story.
-          <div
-            style={styles.codeBlock}
-            dangerouslySetInnerHTML={{__html: `<pre>${codeBlock}</pre>`}}
-          />
-        </p>
-        <p>
-          Usually we create stories with smaller UI components in the app.<br />
-          Have a look at the <a style={styles.link} href="https://getstorybook.io/docs/basics/writing-stories" target="_blank">Writing Stories</a> section in our documentation.
-        </p>
+        <Social config={ welcomeConfig } />
       </div>
     );
   }
