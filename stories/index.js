@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
-import Button from './Button';
 import Social from '../src/Social';
+import SocialOne from './SocialOne';
 import Welcome from './Welcome';
 
 const sampleConfig = {
@@ -15,11 +15,11 @@ const sampleConfig = {
 };
 
 storiesOf('Welcome', module)
-  .add('to Storybook', () => (
-    <Welcome showApp={linkTo('Button')}/>
+  .add('', () => (
+    <Welcome />
   ));
 
 storiesOf('React Social Bar', module)
-  .add('to Storybook', () => (
+  .add('Default', () => (
     <Social config={ sampleConfig } />
   ))
