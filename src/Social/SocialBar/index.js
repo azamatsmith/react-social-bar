@@ -34,12 +34,13 @@ export default class SocialBar extends Component {
   }
 
   _handleTwitter = () => {
-    let link = 'https://twitter.com/intent/tweet?&via=' + this.props.twitterHandle;
+    const handle = this.props.twitterHandle ? `via=${ this.props.twitterHandle }` : '';
+    let link = `https://twitter.com/intent/tweet?${ handle }`;
     const url = '&url=' + this.props.domain;
     const message = '&text=' + this.props.description;
     link = encodeURI(link + message + url);
 
-    this.props.handleClick('twitter');
+    this.props.handleClick('twitter', link);
     window.open(link, 'twitter window', "height=420,width=650");
   }
 

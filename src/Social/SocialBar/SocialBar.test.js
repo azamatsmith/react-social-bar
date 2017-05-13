@@ -8,15 +8,18 @@ describe('<SocialBar />', () => {
   const handleClick = jest.fn();
 
   const props = {
-    description: 'a description',
-    domain: 'a domain',
+    description: 'description',
+    domain: 'domain',
     handleClick,
-    mediaUrl: 'media url string',
+    mediaUrl: 'urlstring',
     productName: 'NameSquash',
     twitterHandle: 'namesquash'
   };
 
+  const noHandleProps = { ...props, twitterHandle: null };
+
   const wrapper = mount(<SocialBar { ...props } />);
+  const noHandleWrapper = mount(<SocialBar { ...noHandleProps } />);
   const shallowWrapper = shallow(<SocialBar { ...props } />);
 
   it('should render without crashing', () => {
@@ -74,18 +77,34 @@ describe('<SocialBar />', () => {
     // expect(handleClick.mock.calls[0]).toHaveBeenCalledWith(['twitter']);
   });
 
+  it('should have a call window.open for twitter', () => {
+    const handleUrl = 'https://twitter.com/intent/tweet?via=namesquash&text=description&url=domain';
+    const noHandleUrl = 'https://twitter.com/intent/tweet?&text=description&url=domain';
+
+    expect(handleClick).toHaveBeenCalledTimes(4);
+    wrapper.instance()._handleTwitter();
+
+    expect(handleClick).toHaveBeenCalledTimes(5);
+    expect(handleClick.mock.calls[4][0]).toEqual('twitter');
+    expect(handleClick.mock.calls[4][1]).toEqual(handleUrl);
+
+    noHandleWrapper.instance()._handleTwitter();
+    expect(handleClick).toHaveBeenCalledTimes(6);
+    expect(handleClick.mock.calls[5][1]).toEqual(noHandleUrl);
+  });
+
   // PROPS
 
   it('should have a description prop', () => {
-    expect(wrapper.props().description).toEqual('a description');
+    expect(wrapper.props().description).toEqual('description');
   });
 
   it('should have a domain prop', () => {
-    expect(wrapper.props().domain).toEqual('a domain');
+    expect(wrapper.props().domain).toEqual('domain');
   });
 
   it('should have a mediaUrl prop', () => {
-    expect(wrapper.props().mediaUrl).toEqual('media url string');
+    expect(wrapper.props().mediaUrl).toEqual('urlstring');
   });
 
   it('should have a productName prop', () => {
