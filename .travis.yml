@@ -16,6 +16,5 @@ script:
 
 after_success:
   - codecov --token=cea8f735-39f1-44ce-8294-d1d043320e2f
-  - bash <(curl -s https://codecov.io/bash) -f coverage/coverage.json
 
 
