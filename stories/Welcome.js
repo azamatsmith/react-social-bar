@@ -17,6 +17,7 @@ const styles = {
     maxWidth: 600,
     lineHeight: 1.4,
     fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
+    position: 'relative'
   },
 
   logo: {
