@@ -13,7 +13,7 @@ export default class SocialBar extends Component {
   static propTypes = {
     description: PropTypes.string.isRequired,
     domain: PropTypes.string.isRequired,
-    handleClick: PropTypes.func.isRequired,
+    handleClick: PropTypes.func,
     mediaUrl: PropTypes.string,
     productName: PropTypes.string.isRequired,
     twitterHandle: PropTypes.string,
@@ -34,13 +34,13 @@ export default class SocialBar extends Component {
   }
 
   _handleTwitter = () => {
-    let link = 'https://twitter.com/intent/tweet?&via=' + this.props.twitterHandle;
+    const handle = this.props.twitterHandle ? `via=${ this.props.twitterHandle }` : '';
+    let link = `https://twitter.com/intent/tweet?${ handle }`;
     const url = '&url=' + this.props.domain;
     const message = '&text=' + this.props.description;
     link = encodeURI(link + message + url);
 
-    this.props.handleClick('twitter');
-    console.log('twitter link: ', link);
+    this.props.handleClick('twitter', link);
     window.open(link, 'twitter window', "height=420,width=650");
   }
 
